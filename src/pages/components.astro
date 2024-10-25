@@ -1,0 +1,31 @@
+---
+import Badge from "@/components/Badge.astro";
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/Container.astro";
+import SocialPill from "@/components/SocialPill.astro";
+import Linkedin from "@/icons/Linkedin.astro";
+---
+
+<Layout
+    title="Design System porfolio.dev",
+    description="Catálogo de componentes de diseño para el proyecto porfolio.dev"
+>
+
+<Container class="py-44 pb-32 flex flex-col gap-y-10">
+    <article class="mb-10">
+        <h1 class="mb- font-semibold">&lt;Badge /&gt;</h1>
+
+        <div class="flex">
+        <Badge>Tailwind</Badge>
+        </div>
+        </article>
+    <article class="mb-10">
+        <h1 class="mb- font-semibold">&lt;SocialPill /&gt;</h1>
+        <div class="flex">
+        <SocialPill href="https://www.linkedin.com/in/lolodev/">
+            <Linkedin class="size-4 lg:size-6" />LinkedIn
+        </SocialPill>
+    </div>
+    </article>
+</Container>
+</Layout>

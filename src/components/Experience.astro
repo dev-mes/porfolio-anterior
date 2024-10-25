@@ -1,0 +1,31 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+    
+    {
+        title: 'Socorrista en Piscina abierta',
+        date: 'Junio - Septiembre 2024',
+        link: '',
+        description: 'Desempeñaba la labor de todo socorista, evitando que pasen sucesos/comportamientos innecesarios dentro de la piscina, más el mantenimiento de esta.'
+    },
+
+    {
+        title: 'Técnico de sistemas microinformáticos y redes',
+        date: 'Marzo - Junio 2024',
+        link: '',
+        description: 'Desempeñaba labores como mantenimiento de servidores tanto software como hardware, mantenimiento y montaje de equipos informáticos, puesta a punto del puesto detrabajo de nuevos compañeros, y daba soporte al usuario presencial y remoto.'
+    }
+    
+]
+---
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+    {
+        EXPERIENCE.map((experience) => (
+            <li class="mb-10 ms-6">
+                <ExperienceItem {...experience} />
+            </li>
+        ))
+    }                 
+</ol>
+

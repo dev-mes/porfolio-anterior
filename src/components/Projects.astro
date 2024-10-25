@@ -1,0 +1,100 @@
+---
+import AstroIcon from '@/icons/AstroIcon.astro';
+import TailwindIcon from '@/icons/TailwindIcon.astro';
+import LinkButton from './LinkButton.astro';
+import Github from '@/icons/Github.astro';
+import WorldWww from '@/icons/World-www.astro';
+import JavascriptIcon from '@/icons/JavascriptIcon.astro';
+import BootstrapIcon from '@/icons/BootstrapIcon.astro';
+
+const TAGS = {
+    ASTRO: {
+        name: "Astro",
+        class: "border border-blue-500 text-black bg-[#f3f4f6] font-semibold items-center",
+        icon: AstroIcon
+    },
+    TAILWIND: {
+        name: "Tailwind",
+        class: "border border-blue-500 text-black bg-[#f3f4f6] font-semibold items-center",
+        icon: TailwindIcon
+    },
+    JAVASCRIPT: {
+        name: "Javascript",
+        class: "border border-blue-500 text-black bg-[#f3f4f6] font-semibold items-center",
+        icon: JavascriptIcon
+    },
+    BOOTSRAP: {
+        name: "Bootstrap",
+        class: "border border-blue-500 text-black bg-[#f3f4f6] font-semibold items-center",
+        icon: BootstrapIcon
+    },
+
+}
+
+const PROJECTS = [
+    {
+		title: 'Juego de Memorizar Parejas',
+		description: 'Juego clásico de memorizar parejas, siempre suma un intento, si aciertas suma un punto, así hasta completar todas las parejas. Lo realizé en clase como proyecto de Aplicaciones Web de Grado Medio.',
+		link: 'https://mesgame.netlify.app',
+        github: '',
+		image: '/projects/juegomemoria.webp',
+        tags: [TAGS.JAVASCRIPT, TAGS.BOOTSRAP],
+	},
+	{
+		title: 'Mi porfolio (reemplazable) ',
+		description: 'Este es mi primer porfolio, lo pongo de prueba para cuando ya tenga proyectos que de verdad se merezcan de ser mostrados en un sitio web.',
+		link: '',
+        github: '',
+		image: 'https://via.placeholder.com/300x200',
+        tags: [TAGS.ASTRO, TAGS.TAILWIND],
+	}
+    
+    ]
+---
+
+<section class="flex flex-col gap-y-16">
+{
+    PROJECTS.map(({ title, description, link, github, image, tags }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-500/80 mb-2">{title}</h3>
+            <p class="text-md text-gray-7600 mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-2 gap-y-2">
+                {tags.map(tag => (
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-3`}>
+                        <tag.icon class="size-6" />
+                        {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img
+                loading="lazy"
+                class="rounded shadow-2xl shadow-black/2    0"
+                src={image}
+                alt={`Captura de pantalla del proyecto ${title}`}
+            />
+            <footer class="flex gap-x-4 items-end justify-start mt-4">
+                {
+                    github && (
+                        <LinkButton href={github}>
+                        <Github class="size-4 mr-2" />
+                            Ver código fuente
+                        </LinkButton>
+                    )
+                }
+                {
+                    link && (
+                        <LinkButton href={link}>
+                        <WorldWww class="size-4 mr-2" />
+                            Ver en la web
+                        </LinkButton>
+                    )
+                }
+                
+                
+            </footer>
+        </article>
+    ))
+}
+</section>

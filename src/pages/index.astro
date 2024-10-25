@@ -1,0 +1,89 @@
+---
+import Layout from '@/layouts/Layout.astro';
+
+import AboutMe from '@/components/AboutMe.astro';
+import Badge from '@/components/Badge.astro';
+import Briefcase from '@/icons/Briefcase.astro';
+import Code from '@/icons/Code.astro';
+import Container from '@/components/Container.astro';
+import Experience from '@/components/Experience.astro';
+import Github from '@/icons/Github.astro';
+import Linkedin from '@/icons/Linkedin.astro';
+import Mail from '@/icons/Mail.astro';
+import ProfileCheck from '@/icons/ProfileCheck.astro';
+import Projects from '@/components/Projects.astro';
+import SocialPill from '@/components/SocialPill.astro';
+import Download from '@/icons/Download.astro';
+---
+
+<Layout title="Lolodev | Porfolio",
+		description='Porfolio de Lolodev, desarrollador web. Experiencia laboral, cursos, proyectos y más...'
+>
+	<main class="px-6">
+		<Container class="py-44 pb-32">
+			
+			
+			<div class="flex gap-x-4">
+				<img src="me.webp" alt="lolodev foto" class="rounded-full size-12 pb-4" />
+				<Badge>Disponible para trabajar</Badge>
+			</div>
+			
+			<h1 class="text-black text-2xl md:text-3xl lg:text-4xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">¡Hola! Soy <span class="text-yellow-500">Lolodev</span>
+				<a
+					href="https://www.linkedin.com/in/lolodev/"
+					target="_blank"
+					rel="noopener"
+					class="flex justify-center items-center hover:scale-105 transition"
+				>
+					
+				</a>
+			</h1>
+			<h2 class="text-xl lg:text-2xl opacity-80 text-wrap  max-w-[700px]"><span class="text-green-500 font-bold">+2 años de experiencia.</span>
+				Estudiante de <span class="text-blue-500 font-bold">42 Madrid</span> y grado superior de DAW.
+				Madrid, España.
+			</h2>
+			<nav class="flex gap-4 mt-8 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/lolodev/">
+					<Linkedin class="size-4 lg:size-6" />LinkedIn
+				</SocialPill>
+				<SocialPill href="https://www.github.com/LoloD3V">
+					<Github class="size-4 lg:size-6" />Github
+				</SocialPill>
+				<SocialPill href=mailto:mespinosasanz@gmail.com>
+					<Mail class="size-4 lg:size-6" />Mail
+				</SocialPill>
+				<SocialPill href="Cv_Manuel_Espinosa.pdf">
+					<Download class="size-4 lg:size-6" />CV
+				</SocialPill>
+
+			</nav>
+		</Container>
+
+		<Container id="experiencia">
+			<h2 class="text-3xl font-bold mb-6 ml-[-14px] flex gap-x-2 items-center underline">
+				<Briefcase class="size-8 ml-[-4px]" />
+				Experiencia Laboral
+			</h2>
+			
+			<Experience />
+		</Container>
+
+		<Container id="proyectos">
+			<h2 class="text-3xl font-bold mb-6 ml-[-14px] flex gap-x-2 items-center underline">
+				<Code class="size-8 ml-[-4px]" />
+				Proyectos
+			</h2>
+			
+			<Projects />
+		</Container>
+
+		<Container id="sobre-mi">
+			<h2 class="text-3xl font-bold ml-[-14px] flex gap-x-2 items-center underline">
+				<ProfileCheck class="size-8 ml-[-4px]" />
+				Sobre mí
+			</h2>
+			
+			<AboutMe />
+		</Container>
+	</main>
+</Layout>
